@@ -1,10 +1,12 @@
-import "./App.css";
+import JsonInput from "./components/JsonInput";
+import TreeVisualization from "./components/TreeVisualization";
 
 function App() {
   return (
-    <>
-      <h1>JSON Tree Visualizer</h1>
-    </>
+    <div className="app">
+      <JsonInput />
+      <TreeVisualization />
+    </div>
   );
 }
 
