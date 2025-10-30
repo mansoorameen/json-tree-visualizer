@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { sampleJsonData } from "../data/sampleJson";
 
-function JsonInput() {
+function JsonInput({ onJsonChange }) {
   const [jsonInput, setJsonInput] = useState("");
   const [error, setError] = useState("");
 
   const validateAndVisualize = () => {
     try {
-      JSON.parse(jsonInput);
+      const parsedJson = JSON.parse(jsonInput);
       setError("");
+      onJsonChange(parsedJson);
     } catch (err) {
       setError("Invalid JSON: " + err.message);
     }
